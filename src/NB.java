@@ -77,9 +77,9 @@ public class NB{
             double accuracy=(cp*100)/(cp+icp);
             double recall=ana_p*100/(total_anamoly);
             double precision= ana_p*100/(ana_p+n_ana_p);
-            jta2.append("\n total_instances : "+total_instances+"     total_anamoly : "+total_anamoly);
-            jta2.append("\n correct pred :"+cp+"     incorrect predictions : "+icp);
-            jta2.append("\n precision"+precision+"     recall : "+recall);
+            jta2.append(" total_instances : "+total_instances+"\n total_anamoly : "+total_anamoly);
+            jta2.append("\n correct pred :"+cp+"\n incorrect predictions : "+icp);
+            jta2.append("\n precision"+precision+"\n recall : "+recall);
             jta2.append("\n accuracy : "+accuracy);
             //jta2.append("\n ana_p : "+ana_p+"  n_ana_p : "+n_ana_p+"  ana_np : "+ana_np);
         }
