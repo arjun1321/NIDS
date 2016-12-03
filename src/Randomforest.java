@@ -1,21 +1,24 @@
+
+import javax.swing.JTextArea;
+import weka.classifiers.Classifier;
+import weka.classifiers.bayes.NaiveBayesUpdateable;
+import weka.classifiers.meta.FilteredClassifier;
+import weka.classifiers.trees.RandomForest;
+import weka.core.Instances;
+import weka.filters.unsupervised.attribute.Remove;
+
 /*
- * To change this template, choose Tools | Templates
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
 /**
  *
- * @author Dewesh
+ * @author Arjun Kumar
  */
-import javax.swing.JOptionPane;
-import javax.swing.JTextArea;
-
-import weka.core.Instances;
-import weka.classifiers.meta.FilteredClassifier;
-import weka.classifiers.trees.J48;
-import weka.filters.unsupervised.attribute.Remove;
-
-public class JunTreeConn {
+public class Randomforest {
+    
     String train_path;
     String test_path;
     JTextArea jta1;
@@ -34,13 +37,11 @@ public class JunTreeConn {
             Remove rm=new Remove();
             rm.setAttributeIndices("1");
 
-            J48 j48=new J48();
-            j48.setUnpruned(true);
 
+            RandomForest rf= new RandomForest();
             FilteredClassifier fc = new FilteredClassifier();
             fc.setFilter(rm);
-            fc.setClassifier(j48);
-
+            fc.setClassifier(rf);
             fc.buildClassifier(train);
 
             int total_anamoly=0;
@@ -50,7 +51,7 @@ public class JunTreeConn {
             int ana_p=0;
             int cp=0;
             int icp=0;
-            
+
 
             for(int i=0;i<test.numInstances();i++){
                 double pred = fc.classifyInstance(test.instance(i));
@@ -80,9 +81,9 @@ public class JunTreeConn {
             double accuracy=(cp*100)/(cp+icp);
             double recall=ana_p*100/(total_anamoly);
             double precision= ana_p*100/(ana_p+n_ana_p);
-            jta2.append("\n total_instances : "+total_instances+"\ntotal_anamoly : "+total_anamoly);
-            jta2.append("\n correct pred :"+cp+"\nincorrect predictions : "+icp);
-            jta2.append("\n precision"+precision+"\nrecall : "+recall);
+            jta2.append("\n total_instances : "+total_instances+"     total_anamoly : "+total_anamoly);
+            jta2.append("\n correct pred :"+cp+"     incorrect predictions : "+icp);
+            jta2.append("\n precision"+precision+"     recall : "+recall);
             jta2.append("\n accuracy : "+accuracy);
             //jta2.append("\n ana_p : "+ana_p+"  n_ana_p : "+n_ana_p+"  ana_np : "+ana_np);
         }
@@ -97,4 +98,5 @@ public class JunTreeConn {
 		this.jta1=jta2;
                 this.jta2=jta3;
     }
+    
 }

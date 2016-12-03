@@ -38,7 +38,6 @@ public class NB{
 
 
             NaiveBayesUpdateable nb= new NaiveBayesUpdateable();
-            train.setClassIndex(train.numAttributes()-1);
             nb.buildClassifier(train);
 
             int total_anamoly=0;

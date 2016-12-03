@@ -126,6 +126,11 @@ public class Home extends javax.swing.JFrame   {
         jScrollPane6.setViewportView(NB_RESULT);
 
         jButton1.setText("RANDOM FOREST");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -272,6 +277,19 @@ public class Home extends javax.swing.JFrame   {
         }
          BTN_NB.setEnabled(false);
     }//GEN-LAST:event_BTN_NBActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        try{
+            Randomforest rf=new Randomforest();
+            rf.init(trainpath, testpath, jTextArea1, jTextArea2);
+            rf.run();
+            BTN_NB.setEnabled(false);
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        jButton1.setEnabled(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     private String browse(){
         String path=new String();
