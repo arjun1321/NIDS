@@ -1,13 +1,5 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 import java.awt.Toolkit;
-import java.io.FileInputStream;
 import javax.swing.JFileChooser;
-import javax.swing.UIManager;
-import javax.swing.JOptionPane;
-import javax.swing.JFrame;
 
 /**
  * Home.java

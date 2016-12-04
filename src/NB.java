@@ -1,21 +1,13 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 
 /**
  *
  * @author Dewesh
  */
-import java.io.File;
-import java.io.IOException;
+
 import javax.swing.JTextArea;
-import weka.core.Instance;
 import weka.core.Instances;
-import weka.core.converters.ArffLoader;
 import weka.classifiers.bayes.NaiveBayesUpdateable;
 import weka.filters.unsupervised.attribute.Remove;
-import weka.classifiers.meta.FilteredClassifier;
 
 public class NB{
     String train_path;
@@ -81,14 +73,12 @@ public class NB{
             jta2.append("\n correct pred :"+cp+"\n incorrect predictions : "+icp);
             jta2.append("\n precision : "+precision+"\n recall : "+recall);
             jta2.append("\n accuracy : "+accuracy);
-            //jta2.append("\n ana_p : "+ana_p+"  n_ana_p : "+n_ana_p+"  ana_np : "+ana_np);
         }
         catch(Exception e){
             e.printStackTrace();
         }
     }
     public void init(String trainpath, String testpath, JTextArea jta2,JTextArea jta3) {
-		// TODO Auto-generated method stub
 		this.train_path=trainpath;
 		this.test_path=testpath;
 		this.jta1=jta2;

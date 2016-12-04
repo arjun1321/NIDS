@@ -1,18 +1,10 @@
 
 import javax.swing.JTextArea;
-import weka.classifiers.Classifier;
 import weka.classifiers.bayes.NaiveBayesUpdateable;
 import weka.classifiers.meta.FilteredClassifier;
 import weka.classifiers.trees.J48;
-import weka.classifiers.trees.RandomForest;
 import weka.core.Instances;
 import weka.filters.unsupervised.attribute.Remove;
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 /**
  *
