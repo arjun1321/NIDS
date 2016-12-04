@@ -132,7 +132,7 @@ public class Home extends javax.swing.JFrame   {
         NB_RESULT.setRows(5);
         jScrollPane6.setViewportView(NB_RESULT);
 
-        jButton1.setText("RANDOM FOREST");
+        jButton1.setText("COMBINED");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -297,7 +297,7 @@ public class Home extends javax.swing.JFrame   {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try{
-            Randomforest rf=new Randomforest();
+            CombinedClassifier rf=new CombinedClassifier();
             rf.init(trainpath, testpath, jTextArea1, jTextArea2);
             rf.run();
             BTN_NB.setEnabled(false);
