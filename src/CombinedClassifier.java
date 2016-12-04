@@ -95,8 +95,8 @@ public class CombinedClassifier {
             double recall=ana_p*100/(total_anamoly);
             double precision= ana_p*100/(ana_p+n_ana_p);
             jta2.append("total_instances : "+total_instances+"\n total_anamoly : "+total_anamoly);
-            jta2.append("\n correct pred :"+cp+"\n incorrect predictions : "+icp);
-            jta2.append("\n precision"+precision+"\n recall : "+recall);
+            jta2.append("\n correct pred : "+cp+"\n incorrect predictions : "+icp);
+            jta2.append("\n precision : "+precision+"\n recall : "+recall);
             jta2.append("\n accuracy : "+accuracy);
         }
         catch(Exception e){
